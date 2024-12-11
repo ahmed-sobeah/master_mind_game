@@ -29,7 +29,7 @@ import javax.swing.*;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
-    int counter=0;
+    
     boolean isBlack=true;
     @Override
     public void start(Stage stage) throws IOException {
