@@ -6,23 +6,44 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
+
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.util.*;
 
-import javafx.scene.control.Button;
+import static java.util.Collections.shuffle;
 
 
 public class HelloController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private Button redbtn, greenbtn, bluebtn, yellowbtn;
+    List<Button>colorButtonList = Arrays.asList(redbtn,greenbtn,bluebtn,yellowbtn);
+    @FXML
+    private Button silverbtn1, silverbtn2, silverbtn3, silverbtn4;
+    ArrayList<Button> silverButtonList =new ArrayList<>( Arrays.asList(silverbtn1, silverbtn2, silverbtn3, silverbtn4));
+    ArrayList<String> guessedCode = new ArrayList<String>();
+    ArrayList<String> secretCode = new ArrayList<String>(Arrays.asList("-fx-background-color: red;","-fx-background-color: blue;","-fx-background-color: green;","-fx-background-color: Yellow;"));
+    private Button activesilverbtn;
+    private String style;
+    private boolean for1=false;
+    private boolean for2=false;
+    private boolean for3=false;
+    private boolean for4=false;
+
 
     public void switchToScene1(ActionEvent event) throws IOException {
-        URL url = new File("C:\\intelj\\Intellij\\master_mind_game\\src\\main\\java\\com\\example\\fx_test\\Scene1.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
+        URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\Scene1.fxml").toURI().toURL();
+         root = FXMLLoader.load(url);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -30,46 +51,98 @@ public class HelloController {
     }
 
     public void switchToScene2(ActionEvent event) throws IOException {
-        URL url = new File("C:\\intelj\\Intellij\\master_mind_game\\src\\main\\java\\com\\example\\fx_test\\Scene2.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\Scene2.fxml").toURI().toURL();
+        root = FXMLLoader.load(url);
+        stage  = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
     public void switchToEasyLevel(ActionEvent event) throws IOException {
-        URL url = new File("C:\\intelj\\Intellij\\master_mind_game\\src\\main\\java\\com\\example\\fx_test\\easy_level.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
+        createSecretCode(secretCode);
+        URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\easy_level.fxml").toURI().toURL();
+        root = FXMLLoader.load(url);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     // easy level
-    public class EasyLevelController {
-        @FXML
-        private Button redbtn, greenbtn, bluebtn, yellowbtn;
-        @FXML
-        private Button silverbtn1, silverbtn2, silverbtn3, silverbtn4;
 
-        private Button activesilverbtn;
-        private void setSilverBtn(Button silverButton) {
-            silverButton.setOnAction(event -> {
-                activesilverbtn = silverButton;
-            });
-        }
 
-        private void setColorbtn(Button colorButton, String color) {
-            colorButton.setOnAction((ActionEvent event) -> {
-                if (activesilverbtn != null) {
-                    activesilverbtn.setStyle("-fx-background-color: " + color + ";");
-                }
-            });
-        }
 
-    }
+
+//    public List<Color> setCode(){
+//        List<> Collections.shuffle(colorButtonList);
+//        return
+//    }
+public void createSecretCode(ArrayList<String> secretCode){
+    Collections.shuffle(secretCode);
+    System.out.println(secretCode);
 }
+        public void setSilverBtn() {
+        //Ahmed Sobeah
+            if(for1 == false){
+               silverbtn1.setStyle(style);
+               for1=true;
+               guessedCode.add(0,silverbtn1.getStyle());
+            }else  if (for2 == false){
+                silverbtn2.setStyle(style);
+                for2=true;
+                guessedCode.add(1,silverbtn2.getStyle());
+            }else if (for3 == false){
+                silverbtn3.setStyle(style);
+                for3=true;
+                guessedCode.add(2,silverbtn3.getStyle());
+            }else if (for4 == false){
+                silverbtn4.setStyle(style);
+                for4=true;
+                guessedCode.add(3,silverbtn4.getStyle());
 
+            }else {
+                return;
+            }
+        }
+        public  void  selectColorRed() {
+        //Ahmed sobeah
+
+            style = redbtn.getStyle();
+            setSilverBtn();
+
+        }
+        public  void  selectColorGreen() {
+            //Ahmed sobeah
+            style = greenbtn.getStyle();
+            setSilverBtn();
+
+
+        }
+        public  void  selectColorBlue() {
+            //Ahmed sobeah
+            style = bluebtn.getStyle();
+            setSilverBtn();
+
+
+        }
+        public  void  selectColorYellow() {
+            //Ahmed sobeah
+            style = yellowbtn.getStyle();
+            setSilverBtn();
+
+
+        }
+        public  void  onClickSubmitButton(ActionEvent event) throws IOException {
+            if (guessedCode == secretCode){
+                URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\winner.fxml").toURI().toURL();
+                root = FXMLLoader.load(url);
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+        }
+
+
+}

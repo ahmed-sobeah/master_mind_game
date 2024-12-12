@@ -21,7 +21,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage)  {
 try {
-    URL url = new File("C:\\intelj\\Intellij\\master_mind_game\\src\\main\\java\\com\\example\\fx_test\\Scene1.fxml").toURI().toURL();
+    URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\Scene1.fxml").toURI().toURL();
     Parent root = FXMLLoader.load(url);
     Scene scene = new Scene(root);
     stage.setScene(scene);
@@ -34,8 +34,6 @@ try {
 
 
     }
-
-
 
     public static void main(String[] args) {
         launch();
