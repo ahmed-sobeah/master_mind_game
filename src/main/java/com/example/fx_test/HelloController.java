@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
 
 import java.io.File;
@@ -30,6 +31,8 @@ public class HelloController {
     @FXML
     private Button silverbtn1, silverbtn2, silverbtn3, silverbtn4;
     ArrayList<Button> silverButtonList =new ArrayList<>( Arrays.asList(silverbtn1, silverbtn2, silverbtn3, silverbtn4));
+    ArrayList<String> guessedCode = new ArrayList<String>();
+    ArrayList<String> secretCode = new ArrayList<String>(Arrays.asList("-fx-background-color: red;","-fx-background-color: blue;","-fx-background-color: green;","-fx-background-color: Yellow;"));
     private Button activesilverbtn;
     private String style;
     private boolean for1=false;
@@ -57,6 +60,7 @@ public class HelloController {
     }
 
     public void switchToEasyLevel(ActionEvent event) throws IOException {
+        createSecretCode(secretCode);
         URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\easy_level.fxml").toURI().toURL();
         root = FXMLLoader.load(url);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -74,55 +78,70 @@ public class HelloController {
 //        List<> Collections.shuffle(colorButtonList);
 //        return
 //    }
-
-    public void setSilverBtn() {
+public void createSecretCode(ArrayList<String> secretCode){
+    Collections.shuffle(secretCode);
+    System.out.println(secretCode);
+}
+        public void setSilverBtn() {
+        //Ahmed Sobeah
             if(for1 == false){
                silverbtn1.setStyle(style);
                for1=true;
+               guessedCode.add(0,silverbtn1.getStyle());
             }else  if (for2 == false){
                 silverbtn2.setStyle(style);
                 for2=true;
+                guessedCode.add(1,silverbtn2.getStyle());
             }else if (for3 == false){
                 silverbtn3.setStyle(style);
                 for3=true;
+                guessedCode.add(2,silverbtn3.getStyle());
             }else if (for4 == false){
                 silverbtn4.setStyle(style);
                 for4=true;
+                guessedCode.add(3,silverbtn4.getStyle());
+
             }else {
                 return;
             }
         }
-
-        private void setColorbtn(Button colorButton, String color) {
-            colorButton.setOnAction((ActionEvent event) -> {
-                if (activesilverbtn != null) {
-                    activesilverbtn.setStyle("-fx-background-color: " + color + ";");
-                }
-            });
-        }
         public  void  selectColorRed() {
+        //Ahmed sobeah
+
             style = redbtn.getStyle();
             setSilverBtn();
 
-
         }
         public  void  selectColorGreen() {
+            //Ahmed sobeah
             style = greenbtn.getStyle();
             setSilverBtn();
 
 
         }
         public  void  selectColorBlue() {
+            //Ahmed sobeah
             style = bluebtn.getStyle();
             setSilverBtn();
 
 
         }
         public  void  selectColorYellow() {
+            //Ahmed sobeah
             style = yellowbtn.getStyle();
             setSilverBtn();
 
 
+        }
+        public  void  onClickSubmitButton(ActionEvent event) throws IOException {
+            if (guessedCode == secretCode){
+                URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\winner.fxml").toURI().toURL();
+                root = FXMLLoader.load(url);
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
         }
 
 
