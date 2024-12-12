@@ -55,6 +55,20 @@ public class HelloController {
         @FXML
         private Button silverbtn1, silverbtn2, silverbtn3, silverbtn4;
 
+        private Button activesilverbtn;
+        private void setSilverBtn(Button silverButton) {
+            silverButton.setOnAction(event -> {
+                activesilverbtn = silverButton;
+            });
+        }
+
+        private void setColorbtn(Button colorButton, String color) {
+            colorButton.setOnAction((ActionEvent event) -> {
+                if (activesilverbtn != null) {
+                    activesilverbtn.setStyle("-fx-background-color: " + color + ";");
+                }
+            });
+        }
 
     }
 }
