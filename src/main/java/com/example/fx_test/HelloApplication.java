@@ -8,47 +8,29 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Reflection;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Stage;
-import javafx.css.CssParser;
 
-import javax.swing.*;
-import java.io.IOException;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.net.URL;
+
 
 public class HelloApplication extends Application {
-    
-    boolean isBlack=true;
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage)  {
+try {
+    URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\Scene1.fxml").toURI().toURL();
+    Parent root = FXMLLoader.load(url);
+    Scene scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
 
-        StackPane root = new StackPane();
-        root.setBackground(new Background(new BackgroundFill(Color.GREY,null,null)));
-        Scene scene = new Scene(root,800,600);
-        Text gameTitle = new Text(StringManger.gameTitle);
-        gameTitle.setFill(isBlack? Color.BLACK:Color.DARKBLUE);
+}catch (Exception e){
+    e.printStackTrace();
+}
 
-        gameTitle.setFont(FontManger.titleFont);
-        gameTitle.setTextAlignment(TextAlignment.CENTER);
-        StackPane.setAlignment(gameTitle,Pos.TOP_CENTER);
-        Button startGameBtn = new Button(StringManger.startGame);
-
-        root.getChildren().addAll(gameTitle,startGameBtn);
-        stage.setTitle(StringManger.gameTitle);
-        stage.setScene(scene);
-        stage.show();
 
 
     }
