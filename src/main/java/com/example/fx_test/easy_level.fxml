@@ -12,10 +12,10 @@
             <Font size="45.0" />
          </font>
       </Label>
-      <Button fx:id="redbtn" layoutX="186.0" layoutY="268.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" />
-      <Button fx:id="bluebtn" layoutX="326.0" layoutY="268.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: blue;" />
-      <Button fx:id="greenbtn" layoutX="262.0" layoutY="268.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: green;" />
-      <Button fx:id="yellowbtn" layoutX="386.0" layoutY="268.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: Yellow;" />
+      <Button fx:id="redbtn" layoutX="186.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectColorRed" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" />
+      <Button fx:id="bluebtn" layoutX="326.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectColorBlue" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: blue;" />
+      <Button fx:id="greenbtn" layoutX="262.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectColorGreen" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: green;" />
+      <Button fx:id="yellowbtn" layoutX="386.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectColorYellow" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: Yellow;" />
       <Button fx:id="silverbtn1" layoutX="186.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: SILVER;" />
       <Button fx:id="silverbtn2" layoutX="262.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: SILVER;" />
       <Button fx:id="silverbtn3" layoutX="326.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: SILVER;" />
