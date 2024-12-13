@@ -1,16 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: GREY;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx_test.HelloController">
    <children>
-      <Label layoutX="200.0" layoutY="35.0" text="Easy Level">
+      <Label layoutX="200.0" layoutY="14.0" text="Easy Level">
          <font>
             <Font size="45.0" />
          </font>
       </Label>
+      <Button fx:id="redbtn" layoutX="186.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectColorRed" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" />
+      <Button fx:id="bluebtn" layoutX="326.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectColorBlue" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: blue;" />
+      <Button fx:id="greenbtn" layoutX="262.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectColorGreen" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: green;" />
+      <Button fx:id="yellowbtn" layoutX="386.0" layoutY="268.0" mnemonicParsing="false" onAction="#selectColorYellow" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: Yellow;" />
+      <Button fx:id="silverbtn1" layoutX="186.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: SILVER;" />
+      <Button fx:id="silverbtn2" layoutX="262.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: SILVER;" />
+      <Button fx:id="silverbtn3" layoutX="326.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: SILVER;" />
+      <Button fx:id="silverbtn4" layoutX="386.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: SILVER;" />
+      <Button layoutX="67.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+      <Button layoutX="67.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+      <Button layoutX="67.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+      <Button layoutX="67.0" layoutY="268.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
+      <Label layoutX="41.0" layoutY="125.0" text="1-" />
+      <Label layoutX="41.0" layoutY="179.0" text="2-" />
+      <Label layoutX="41.0" layoutY="229.0" text="3-" />
+      <Label layoutX="41.0" layoutY="272.0" text="4-" />
+      <Label layoutX="214.0" layoutY="80.0" text="Your Attempts:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="408.0" layoutY="83.0" text="0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="47.0" text="Attempt Left">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="75.0" text="10">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="262.0" layoutY="334.0" mnemonicParsing="false" onAction="#onClickSubmitButton" prefHeight="25.0" prefWidth="77.0" text="Sumbit">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
