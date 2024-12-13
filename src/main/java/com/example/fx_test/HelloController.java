@@ -26,13 +26,13 @@ public class HelloController {
     private Scene scene;
     private Parent root;
     @FXML
-    private Button redbtn, greenbtn, bluebtn, yellowbtn;
-    List<Button>colorButtonList = Arrays.asList(redbtn,greenbtn,bluebtn,yellowbtn);
+    private Button redbtn, greenbtn, bluebtn, yellowbtn ,purplebtn;
+    List<Button>colorButtonList = Arrays.asList(redbtn,greenbtn,bluebtn,yellowbtn,purplebtn) ;
     @FXML
     private Button silverbtn1, silverbtn2, silverbtn3, silverbtn4;
     ArrayList<Button> silverButtonList =new ArrayList<>( Arrays.asList(silverbtn1, silverbtn2, silverbtn3, silverbtn4));
     ArrayList<String> guessedCode = new ArrayList<String>();
-    ArrayList<String> secretCode = new ArrayList<String>(Arrays.asList("-fx-background-color: red;","-fx-background-color: blue;","-fx-background-color: green;","-fx-background-color: Yellow;"));
+    ArrayList<String> secretCode = new ArrayList<String>(Arrays.asList("-fx-background-color: red;","-fx-background-color: blue;","-fx-background-color: green;","-fx-background-color: Yellow;","-fx-background-color: Purple;" ));
     private Button activesilverbtn;
     private String style;
     private boolean for1=false;
@@ -42,7 +42,7 @@ public class HelloController {
 
 
     public void switchToScene1(ActionEvent event) throws IOException {
-        URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\Scene1.fxml").toURI().toURL();
+        URL url = new File("C:\\Users\\hp\\IdeaProjects\\mastermindgame\\src\\main\\java\\com\\example\\fx_test\\Scene1.fxml").toURI().toURL();
          root = FXMLLoader.load(url);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -51,7 +51,7 @@ public class HelloController {
     }
 
     public void switchToScene2(ActionEvent event) throws IOException {
-        URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\Scene2.fxml").toURI().toURL();
+        URL url = new File("C:\\Users\\hp\\IdeaProjects\\mastermindgame\\src\\main\\java\\com\\example\\fx_test\\Scene2.fxml").toURI().toURL();
         root = FXMLLoader.load(url);
         stage  = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -61,7 +61,7 @@ public class HelloController {
 
     public void switchToEasyLevel(ActionEvent event) throws IOException {
         createSecretCode(secretCode);
-        URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\easy_level.fxml").toURI().toURL();
+        URL url = new File("C:\\Users\\hp\\IdeaProjects\\mastermindgame\\src\\main\\java\\com\\example\\fx_test\\easy_level.fxml").toURI().toURL();
         root = FXMLLoader.load(url);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -69,7 +69,16 @@ public class HelloController {
         stage.show();
     }
 
-    // easy level
+    // normal level
+    public void switchTonormal(ActionEvent event) throws IOException {
+        createSecretCode(secretCode);
+        URL url = new File("C:\\Users\\hp\\IdeaProjects\\mastermindgame\\src\\main\\java\\com\\example\\fx_test\\normal.fxml").toURI().toURL();
+        root = FXMLLoader.load(url);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
 
@@ -101,22 +110,21 @@ public void createSecretCode(ArrayList<String> secretCode){
                 for4=true;
                 guessedCode.add(3,silverbtn4.getStyle());
 
-            }else {
+            }
+
+            else {
                 return;
             }
         }
         public  void  selectColorRed() {
         //Ahmed sobeah
-
             style = redbtn.getStyle();
             setSilverBtn();
-
         }
         public  void  selectColorGreen() {
             //Ahmed sobeah
             style = greenbtn.getStyle();
             setSilverBtn();
-
 
         }
         public  void  selectColorBlue() {
@@ -133,9 +141,18 @@ public void createSecretCode(ArrayList<String> secretCode){
 
 
         }
+    public  void  selectColorPurple() {
+        //sohilaayman
+        style =purplebtn.getStyle();
+        setSilverBtn();
+
+    }
+
+
+
         public  void  onClickSubmitButton(ActionEvent event) throws IOException {
             if (guessedCode == secretCode){
-                URL url = new File("\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\winner.fxml").toURI().toURL();
+                URL url = new File("C:\\Users\\hp\\IdeaProjects\\mastermindgame\\src\\main\\java\\com\\example\\fx_test\\winner.fxml").toURI().toURL();
                 root = FXMLLoader.load(url);
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
