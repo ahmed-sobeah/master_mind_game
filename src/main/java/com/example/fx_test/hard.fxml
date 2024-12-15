@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx_test.HelloController">
+    <children>
+        <Label layoutX="257.0" layoutY="18.0" prefHeight="47.0" prefWidth="86.0" text="HARD" textAlignment="CENTER">
+            <font>
+                <Font size="32.0" />
+            </font>
+        </Label>
+        <Button fx:id="redbtn" layoutX="168.0" layoutY="213.0" mnemonicParsing="false" onAction="#selectColorRed" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" />
+        <Button fx:id="bluebtn" layoutX="168.0" layoutY="252.0" mnemonicParsing="false" onAction="#selectColorBlue" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: blue;" />
+        <Button fx:id="greenbtn" layoutX="283.0" layoutY="213.0" mnemonicParsing="false" onAction="#selectColorGreen" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: green;" />
+        <Button fx:id="yellowbtn" layoutX="283.0" layoutY="252.0" mnemonicParsing="false" onAction="#selectColorYellow" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: Yellow;" />
+        <Button layoutX="85.0" layoutY="152.0" mnemonicParsing="false" style="-fx-background-color: r;" />
+        <Button fx:id="purplebtn" layoutX="387.0" layoutY="252.0" mnemonicParsing="false" onAction="#selectColorPurple" prefHeight="26.0" prefWidth="28.0" style="-fx-background-color: purple;" />
+        <Button fx:id="submit" layoutX="248.0" layoutY="294.0" mnemonicParsing="false" onAction="#onClickSubmitButtonForHard" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: white;" text="Submit">
+            <Button fx:id="silverbtn1" layoutX="225.0" layoutY="139.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+            <Button fx:id="silverbtn2" layoutX="274.0" layoutY="140.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+            <Button fx:id="silverbtn3" layoutX="321.0" layoutY="139.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+            <Button fx:id="silverbtn4" layoutX="366.0" layoutY="139.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+
+        <Button fx:id="box1" layoutX="31.0" layoutY="81.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+        <Button fx:id="box2" layoutX="31.0" layoutY="126.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+        <Button fx:id="box3" layoutX="31.0" layoutY="174.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+        <Button fx:id="box4" layoutX="31.0" layoutY="213.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+        <Label fx:id="attemptsleft" layoutX="45.0" layoutY="54.0" prefHeight="20.0" prefWidth="16.0" text="3">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="10.0" layoutY="31.0" text="Attemps Left :">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="207.0" layoutY="80.0" text="Your Attemps :">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="yourattempts" layoutX="335.0" layoutY="84.0" text="0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="10.0" layoutY="85.0" text="1-" />
+        <Label layoutX="10.0" layoutY="130.0" text="2-" />
+        <Label layoutX="8.0" layoutY="178.0" text="3-" />
+        <Label layoutX="10.0" layoutY="217.0" text="4-" />
+        <Button fx:id="silverbtn1" layoutX="168.0" layoutY="174.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" />
+        <Button fx:id="silverbtn2" layoutX="243.0" layoutY="174.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" />
+        <Button fx:id="silverbtn3" layoutX="311.0" layoutY="174.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" />
+        <Button fx:id="silverbtn4" layoutX="386.0" layoutY="174.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" />
+      <Button fx:id="brownbtn" layoutX="387.0" layoutY="213.0" mnemonicParsing="false" onAction="#selectColorBrown" prefHeight="25.0" prefWidth="27.0" style="-fx-background-color: brown;" />
+    </children>
+</AnchorPane>
