@@ -55,8 +55,8 @@ public class HelloController {
 
     public void switchToScene1(ActionEvent event) throws IOException {
         //please make sure to copy the file path reference     here
-        URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\Scene1.fxml").toURI().toURL();
-         root = FXMLLoader.load(url);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene1.fxml"));
+        root = fxmlLoader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -65,8 +65,8 @@ public class HelloController {
 
     public void switchToScene2(ActionEvent event) throws IOException {
         //please make sure to copy the file path reference     here
-        URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\Scene2.fxml").toURI().toURL();
-        root = FXMLLoader.load(url);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene2.fxml"));
+        root = fxmlLoader.load();
         stage  = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -75,8 +75,8 @@ public class HelloController {
 
     public void switchToEasyLevel(ActionEvent event) throws IOException {
         //please make sure to copy the file path reference     here
-        URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\easy_level.fxml").toURI().toURL();
-        root = FXMLLoader.load(url);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("easy_level.fxml"));
+        root = fxmlLoader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -87,8 +87,8 @@ public class HelloController {
     // normal level
     public void switchTonormal(ActionEvent event) throws IOException {
         //please make sure to copy the file path reference     here
-        URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\normal.fxml").toURI().toURL();
-        root = FXMLLoader.load(url);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("normal.fxml"));
+        root = fxmlLoader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -97,8 +97,8 @@ public class HelloController {
     }
     public void switchToHard(ActionEvent event) throws IOException {
         //please make sure to copy the file path reference     here
-        URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\hard.fxml").toURI().toURL();
-        root = FXMLLoader.load(url);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hard.fxml"));
+        root = fxmlLoader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -247,8 +247,8 @@ public class HelloController {
     public void ifLoseForEasy(ActionEvent event) throws IOException{
         //please make sure to copy the file path reference     here
         if (leftattemptsE==-1){
-            URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\lose.fxml").toURI().toURL();
-            root = FXMLLoader.load(url);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("lose.fxml"));
+            root = fxmlLoader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -258,8 +258,8 @@ public class HelloController {
     public void ifLoseForNormal(ActionEvent event) throws IOException{
         //please make sure to copy the file path reference     here
         if (leftattemptsN==-1){
-            URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\lose.fxml").toURI().toURL();
-            root = FXMLLoader.load(url);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("lose.fxml"));
+            root = fxmlLoader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -269,8 +269,8 @@ public class HelloController {
     public void ifLoseForHard(ActionEvent event) throws IOException{
         if (leftattemptsH==-1){
             //please make sure to copy the file path reference     here
-            URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\lose.fxml").toURI().toURL();
-            root = FXMLLoader.load(url);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("lose.fxml"));
+            root = fxmlLoader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -285,8 +285,8 @@ public class HelloController {
         isBlackOrWhite(secretCode.getSecretCode(),guessedCode);
         if (guessedCode.equals(secretCode.getSecretCode())){
             //please make sure to copy the file path reference     here
-            URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\winner.fxml").toURI().toURL();
-            root = FXMLLoader.load(url);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("winner.fxml"));
+            root = fxmlLoader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -304,8 +304,8 @@ public class HelloController {
         isBlackOrWhite(secretCode.getSecretCode(),guessedCode);
         if (guessedCode.equals(secretCode.getSecretCode())){
             //please make sure to copy the file path reference     here
-            URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\winner.fxml").toURI().toURL();
-            root = FXMLLoader.load(url);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("winner.fxml"));
+            root = fxmlLoader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -323,8 +323,8 @@ public class HelloController {
         isBlackOrWhite(secretCode.getSecretCode(),guessedCode);
         if (guessedCode.equals(secretCode.getSecretCode())){
             //please make sure to copy the file path reference     here
-            URL url = new File("C:\\Users\\Ahmed Sobeah\\dev\\fx_test\\src\\main\\java\\com\\example\\fx_test\\winner.fxml").toURI().toURL();
-            root = FXMLLoader.load(url);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("winner.fxml"));
+            root = fxmlLoader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

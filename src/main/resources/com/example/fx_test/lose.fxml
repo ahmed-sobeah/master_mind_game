@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="playButton" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1C1C1C;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx_test.HelloController">
+   <children>
+      <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="151.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Downloads/Telegram%20Desktop/photo_2024-12-13_00-39-50.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="playButton" layoutX="26.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToScene2" style="-fx-background-color: #1C1C1C;" text="Play Again" textFill="#ba7373">
+         <font>
+            <Font name="Bookman Old Style Bold Italic" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="exiitButton" layoutX="274.0" layoutY="327.0" mnemonicParsing="false" onAction="#switchToScene1" style="-fx-background-color: #1C1C1C;" text="Exit" textFill="#fb1a1a">
+         <font>
+            <Font name="Bookman Old Style Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="202.0" layoutY="27.0" text="Game Over" textAlignment="CENTER" textFill="RED" textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
